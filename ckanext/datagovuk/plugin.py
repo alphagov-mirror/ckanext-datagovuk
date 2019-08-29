@@ -163,7 +163,9 @@ class DatagovukPlugin(plugins.SingletonPlugin, toolkit.DefaultDatasetForm, Defau
         return dict(
             resource_create=ckanext.datagovuk.action.create.resource_create,
             user_create=ckanext.datagovuk.action.create.user_create,
-            user_auth=ckanext.datagovuk.action.get.user_auth
+            user_auth=ckanext.datagovuk.action.get.user_auth,
+            package_search=ckanext.datagovuk.action.get.package_search,
+            package_show=ckanext.datagovuk.action.get.package_show,
         )
 
     # IValidators
