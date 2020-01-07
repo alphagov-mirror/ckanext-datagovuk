@@ -33,6 +33,7 @@ class DatagovukPlugin(plugins.SingletonPlugin, toolkit.DefaultDatasetForm, Defau
     plugins.implements(plugins.ITemplateHelpers)
     plugins.implements(plugins.IPackageController, inherit=True)
     plugins.implements(plugins.IMiddleware, inherit=True)
+    plugins.implements(plugins.IResourceController, inherit=True)
 
     # IConfigurer
 
@@ -306,9 +307,11 @@ class DatagovukPlugin(plugins.SingletonPlugin, toolkit.DefaultDatasetForm, Defau
 
     def before_create(self, context, resource):
         """Runs before resource_create. Modifies resource destructively to put in the S3 URL"""
+        print('***** before create')
         self.before_create_or_update(context, resource)
 
     def before_update(self, context, _, resource):
+        print('***** before update')
         """Runs before resource_update. Modifies resource destructively to put in the S3 URL"""
         self.before_create_or_update(context, resource)
 
