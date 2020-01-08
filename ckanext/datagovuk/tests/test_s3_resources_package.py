@@ -1,4 +1,4 @@
-from mock import patch
+from mock import patch, Mock
 
 from ckanext.datagovuk.controllers.package import S3ResourcesPackageController
 
@@ -43,11 +43,14 @@ class TestS3ResourcesPackageController:
 
     @patch.dict('ckanext.datagovuk.controllers.package.config',
                 {'ckan.datagovuk.s3_url_prefix': 'https://s3.amazonaws.com/test-upload/'})
+    @patch('ckanext.datagovuk.controllers.package.response')
+    @patch('ckanext.datagovuk.controllers.package.request')
     @patch('ckanext.datagovuk.controllers.package.toolkit.abort')
     @patch('ckanext.datagovuk.controllers.package.toolkit')
     @patch('ckanext.datagovuk.controllers.package.redirect')
-    def test_resource_downloads_upload(self, mock_redirect, mock_toolkit, mock_abort):
+    def test_resource_downloads_upload(self, mock_redirect, mock_toolkit, mock_abort, mock_request, mock_response):
         mock_toolkit.get_action = MockAction
+        mock_request.call_application = Mock(return_value=('', '', ''))
 
         mock_toolkit.get_action.rsc = {
             'id': 'resource-id',
@@ -61,6 +64,4 @@ class TestS3ResourcesPackageController:
         s3_resource.resource_download('test-id', 'resource-id')
 
         assert not mock_abort.called
-        assert mock_redirect.called
-        assert mock_redirect.call_count == 1
-        assert mock_redirect.call_args[0][0] == "https://s3.amazonaws.com/test-upload/test/resources/resource-id.zip"
+        assert not mock_redirect.called
