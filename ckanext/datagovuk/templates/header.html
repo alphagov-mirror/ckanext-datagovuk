@@ -2,7 +2,7 @@
 
 {% block header_logo %}
   <span class="header-logo">
-    <a href="{{ h.url_for('home') }}">
+    <a href="{{ h.url_for('home.index') }}">
       {{ g.site_title }}
       {% if g.site_description %} | {{ g.site_description }}{% endif %}
     </a>
@@ -62,4 +62,3 @@
     </li>
   {% endblock %}
 {% endblock %}
-

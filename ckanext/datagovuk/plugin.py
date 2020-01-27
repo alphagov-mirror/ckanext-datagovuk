@@ -248,6 +248,8 @@ class DatagovukPlugin(plugins.SingletonPlugin, toolkit.DefaultDatasetForm, Defau
 
         route_map.connect('harvest_index', '/harvest', action='index')
 
+        print('*** after map', route_map)
+        import remote_pdb; remote_pdb.set_trace(host='0.0.0.0', port=3000)
         return route_map
 
     # ITemplateHelpers
