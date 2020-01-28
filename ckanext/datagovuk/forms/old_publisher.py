@@ -1,25 +1,10 @@
 import os
-
-from flask import Blueprint
 import ckan.plugins as plugins
-# from ckan.controllers import OrganizationController
 import ckan.plugins.toolkit as toolkit
-
-publisher = Blueprint('publisher', __name__)
-
-
-@publisher.route('/publisher', endpoint='organization_index')
-def publisher_index():
-    # org = OrganizationController()
-    # return org.index()
-    return 'ok'
-
 
 class PublisherForm(plugins.SingletonPlugin, toolkit.DefaultOrganizationForm):
     plugins.implements(plugins.IGroupForm, inherit=True)
     plugins.implements(plugins.IConfigurer, inherit=True)
-    plugins.implements(plugins.IBlueprint)
-
 
     # IConfigurer
 
@@ -66,6 +51,3 @@ class PublisherForm(plugins.SingletonPlugin, toolkit.DefaultOrganizationForm):
 
     def is_fallback(self):
         return True
-
-    def get_blueprint(self):
-        return publisher

@@ -219,37 +219,38 @@ class DatagovukPlugin(plugins.SingletonPlugin, toolkit.DefaultDatasetForm, Defau
         # Recreates the organization routes with /publisher instead.
         with SubMapper(route_map, controller='organization') as m:
             m.connect('organizations_index', '/publisher', action='index')
-            m.connect('organization_index', '/publisher', action='index')
-            m.connect('organization_new', '/publisher/new', action='new')
-            for action in [
-            'delete',
-            'admins',
-            'member_new',
-            'member_delete',
-            'history']:
-                m.connect('organization_' + action,
-                        '/publisher/' + action + '/{id}',
-                        action=action)
+        #     m.connect('organization_index', '/publisher', action='index')
+        #     m.connect('organization_new', '/publisher/new', action='new')
+        #     for action in [
+        #     'delete',
+        #     'admins',
+        #     'member_new',
+        #     'member_delete',
+        #     'history']:
+        #         m.connect('organization_' + action,
+        #                 '/publisher/' + action + '/{id}',
+        #                 action=action)
 
-            m.connect('organization_activity', '/publisher/activity/{id}/{offset}',
-                    action='activity')
-            m.connect('organization_read', '/publisher/{id}', action='read')
-            m.connect('organization_about', '/publisher/about/{id}',
-                    action='about')
-            m.connect('organization_read', '/publisher/{id}', action='read',
-                    ckan_icon='sitemap')
-            m.connect('organization_edit', '/publisher/edit/{id}',
-                    action='edit')
-            m.connect('organization_members', '/publisher/members/{id}',
-                    action='members')
-            m.connect('organization_bulk_process',
-                    '/publisher/bulk_process/{id}',
-                    action='bulk_process')
+        #     m.connect('organization_activity', '/publisher/activity/{id}/{offset}',
+        #             action='activity')
+        #     m.connect('organization_read', '/publisher/{id}', action='read')
+        #     m.connect('organization_about', '/publisher/about/{id}',
+        #             action='about')
+        #     m.connect('organization_read', '/publisher/{id}', action='read',
+        #             ckan_icon='sitemap')
+        #     m.connect('organization_edit', '/publisher/edit/{id}',
+        #             action='edit')
+        #     m.connect('organization_members', '/publisher/members/{id}',
+        #             action='members')
+        #     m.connect('organization_bulk_process',
+        #             '/publisher/bulk_process/{id}',
+        #             action='bulk_process')
 
+        route_map.connect('publisher_index', '/publisher', action='index')
         route_map.connect('harvest_index', '/harvest', action='index')
 
         print('*** after map', route_map)
-        import remote_pdb; remote_pdb.set_trace(host='0.0.0.0', port=3000)
+        # import remote_pdb; remote_pdb.set_trace(host='0.0.0.0', port=3000)
         return route_map
 
     # ITemplateHelpers
