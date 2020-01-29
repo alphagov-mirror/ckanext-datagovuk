@@ -247,7 +247,7 @@ class DatagovukPlugin(plugins.SingletonPlugin, toolkit.DefaultDatasetForm, Defau
         #             '/publisher/bulk_process/{id}',
         #             action='bulk_process')
 
-        # route_map.connect('organizations_index', '/publisher', action='index')
+        route_map.connect('organizations_index', '/publisher', action='index')
         # route_map.connect('publishers_index', '/publisher', action='index')
         route_map.connect('harvest_index', '/harvest', action='index')
 
