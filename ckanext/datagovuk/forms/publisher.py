@@ -26,6 +26,19 @@ def publishers_index():
     c.page = h.Page([], 0)
     return render(u'organization/index.html', extra_vars=vars)
 
+
+@publisher.route('/publisher/new', endpoint='organization_new')
+def publisher_new():
+
+    page = h.get_page_number(request.params) or 1
+    vars = {
+        'group_type': 'organization'
+    }
+    c.page = h.Page([], 0)
+    c.group_dict = ''
+    return render(u'organization/new.html', extra_vars=vars)
+
+
 class PublisherForm(plugins.SingletonPlugin, toolkit.DefaultOrganizationForm):
     plugins.implements(plugins.IGroupForm, inherit=True)
     plugins.implements(plugins.IConfigurer, inherit=True)
@@ -79,4 +92,7 @@ class PublisherForm(plugins.SingletonPlugin, toolkit.DefaultOrganizationForm):
         return True
 
     def get_blueprint(self):
+        import logging
+        log = logging.getLogger(__name__)
+        log.error('*** get_blueprint')
         return publisher
