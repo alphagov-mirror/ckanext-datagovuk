@@ -1,20 +1,30 @@
 import os
 
 from flask import Blueprint
+
+from ckan.common import c
+# from ckan.controllers.organization import OrganizationController
+import ckan.lib.helpers as h
 import ckan.plugins as plugins
-from ckan.controllers.organization import OrganizationController
-from ckan.lib.plugins import DefaultOrganizationForm
+# from ckan.lib.plugins import DefaultOrganizationForm
 import ckan.plugins.toolkit as toolkit
+from ckan.plugins.toolkit import render, request
 
 publisher = Blueprint('publisher', __name__)
 
 
 @publisher.route('/publisher', endpoint='organizations_index')
 def publishers_index():
-    org = OrganizationController()
-    return org.index()
+    # org = OrganizationController()
+    # return org.index()
 #     return 'ok'
 
+    page = h.get_page_number(request.params) or 1
+    vars = {
+        'group_type': 'organization'
+    }
+    c.page = h.Page([], 0)
+    return render(u'organization/index.html', extra_vars=vars)
 
 class PublisherForm(plugins.SingletonPlugin, toolkit.DefaultOrganizationForm):
     plugins.implements(plugins.IGroupForm, inherit=True)
