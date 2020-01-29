@@ -217,8 +217,9 @@ class DatagovukPlugin(plugins.SingletonPlugin, toolkit.DefaultDatasetForm, Defau
         route_map.connect('harvest_org_list', '/publisher/harvest/' + '{id}', controller=harvest_org_controller, action='source_list')
 
         # Recreates the organization routes with /publisher instead.
-        with SubMapper(route_map, controller='organization') as m:
-            m.connect('organizations_index', '/publisher', action='index')
+        # with SubMapper(route_map, controller='organization') as m:
+        #     m.connect('organizations_index', '/publisher', action='index')
+            # m.connect('organizations_index', '/publisher', action='search')
         #     m.connect('organization_index', '/publisher', action='index')
         #     m.connect('organization_new', '/publisher/new', action='new')
         #     for action in [
@@ -246,7 +247,8 @@ class DatagovukPlugin(plugins.SingletonPlugin, toolkit.DefaultDatasetForm, Defau
         #             '/publisher/bulk_process/{id}',
         #             action='bulk_process')
 
-        route_map.connect('publisher_index', '/publisher', action='index')
+        # route_map.connect('organizations_index', '/publisher', action='index')
+        # route_map.connect('publishers_index', '/publisher', action='index')
         route_map.connect('harvest_index', '/harvest', action='index')
 
         print('*** after map', route_map)

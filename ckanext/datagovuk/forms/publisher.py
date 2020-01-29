@@ -2,17 +2,18 @@ import os
 
 from flask import Blueprint
 import ckan.plugins as plugins
-# from ckan.controllers import OrganizationController
+from ckan.controllers.organization import OrganizationController
+from ckan.lib.plugins import DefaultOrganizationForm
 import ckan.plugins.toolkit as toolkit
 
 publisher = Blueprint('publisher', __name__)
 
 
-@publisher.route('/publisher', endpoint='organization_index')
-def publisher_index():
-    # org = OrganizationController()
-    # return org.index()
-    return 'ok'
+@publisher.route('/publisher', endpoint='organizations_index')
+def publishers_index():
+    org = OrganizationController()
+    return org.index()
+#     return 'ok'
 
 
 class PublisherForm(plugins.SingletonPlugin, toolkit.DefaultOrganizationForm):
