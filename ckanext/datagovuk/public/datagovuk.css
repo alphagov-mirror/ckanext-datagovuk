@@ -110,3 +110,14 @@ p.home-footer-text {
   line-height: 1.5;
 }
 
+.form-control {
+  margin-bottom: 10px;
+}
+
+.mt-10 {
+  margin-top: 10px;
+}
+
+.mb-10 {
+  margin-bottom: 10px;
+}
