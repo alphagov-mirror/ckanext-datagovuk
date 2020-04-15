@@ -121,3 +121,8 @@ p.home-footer-text {
 .mb-10 {
   margin-bottom: 10px;
 }
+
+.control-label.col-md-3 {
+  text-align: right;
+  padding-right: 0;
+}
