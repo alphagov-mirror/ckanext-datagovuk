@@ -111,7 +111,7 @@ p.home-footer-text {
 }
 
 .form-control {
-  margin-bottom: 10px;
+  margin-bottom: 14px;
 }
 
 .mt-10 {
@@ -125,4 +125,13 @@ p.home-footer-text {
 .control-label.col-md-3 {
   text-align: right;
   padding-right: 0;
+}
+
+.editor-info-block {
+  margin-top: -14px;
+  margin-bottom: 14px;
+}
+
+.float-container {
+  overflow: auto;
 }
