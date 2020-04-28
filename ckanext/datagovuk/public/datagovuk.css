@@ -132,6 +132,7 @@ p.home-footer-text {
   margin-bottom: 14px;
 }
 
-.float-container {
+.float-container,
+.form-group {
   overflow: auto;
 }
