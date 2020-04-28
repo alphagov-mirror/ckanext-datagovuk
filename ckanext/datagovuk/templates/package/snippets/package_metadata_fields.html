@@ -13,7 +13,7 @@
 {# This block appears at the bottom of the form, in place of the custom fields in default CKAN #}
 <div class="form-group control-group">
   <label class="control-label col-md-3" for="theme-primary">{{ _("Theme") }}</label>
-  <div class="controls col-md-9">
+  <div class="controls col-md-4">
     <select id="field-theme-primary" class="form-control" name="theme-primary">
       <option value></option>
       {% for theme in h.alphabetise_dict(h.themes()) %}
@@ -64,43 +64,43 @@
 </div>
 <div class="form-group control-group">
   <label class="control-label col-md-3" for="contact-name">{{ _("Contact Name") }}</label>
-  <div class="controls col-md-9">
+  <div class="controls col-md-4">
     <input type="text" id="field-contact-name" name="contact-name" class="form-control" value="{{ data.get('contact-name','') }}">
   </div>
 </div>
 <div class="form-group control-group">
   <label class="control-label col-md-3" for="contact-email">{{ _("Contact Email") }}</label>
-  <div class="controls col-md-9">
+  <div class="controls col-md-4">
     <input type="text" id="field-contact-email" name="contact-email" class="form-control" value="{{ data.get('contact-email','') }}">
   </div>
 </div>
 <div class="form-group control-group">
   <label class="control-label col-md-3" for="contact-phone">{{ _("Contact Phone") }}</label>
-  <div class="controls col-md-9">
+  <div class="controls col-md-4">
     <input type="text" id="field-contact-phone" name="contact-phone" class="form-control" value="{{ data.get('contact-phone','') }}">
   </div>
 </div>
 <div class="form-group control-group">
   <label class="control-label col-md-3" for="foi-name">{{ _("FOI Name") }}</label>
-  <div class="controls col-md-9">
+  <div class="controls col-md-4">
     <input type="text" id="field-foi-name" class="form-control" name="foi-name" value="{{ data.get('foi-name','') }}">
   </div>
 </div>
 <div class="form-group control-group">
   <label class="control-label col-md-3" for="foi-email">{{ _("FOI Email") }}</label>
-  <div class="controls col-md-9">
+  <div class="controls col-md-4">
     <input type="text" id="field-foi-email" class="form-control" name="foi-email" value="{{ data.get('foi-email','') }}">
   </div>
 </div>
 <div class="form-group control-group">
   <label class="control-label col-md-3" for="foi-web">{{ _("FOI Web") }}</label>
-  <div class="controls col-md-9">
+  <div class="controls col-md-4">
     <input type="text" id="field-foi-web" class="form-control" name="foi-web" value="{{ data.get('foi-web','') }}">
   </div>
 </div>
 <div class="form-group control-group">
   <label class="control-label col-md-3" for="foi-phone">{{ _("FOI Phone") }}</label>
-  <div class="controls col-md-9">
+  <div class="controls col-md-4">
     <input type="text" id="field-foi-phone" class="form-control" name="foi-phone" value="{{ data.get('foi-phone','') }}">
   </div>
 </div>

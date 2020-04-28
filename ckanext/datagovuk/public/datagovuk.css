@@ -136,3 +136,15 @@ p.home-footer-text {
 .form-group {
   overflow: auto;
 }
+
+.form-group {
+  margin-bottom: 14px;
+}
+
+.form-control {
+  height: 32px;
+}
+
+.control-label.col-md-3 {
+  padding-top: 4px;
+}
