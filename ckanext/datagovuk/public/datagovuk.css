@@ -148,3 +148,12 @@ p.home-footer-text {
 .control-label.col-md-3 {
   padding-top: 4px;
 }
+
+.btn-danger {
+  background-image: -webkit-linear-gradient(top,#ee5f5b,#bd362f);
+}
+
+.btn-primary {
+  background-image: linear-gradient(to bottom,#30778d,#085871);
+}
+
