@@ -59,14 +59,6 @@ a.btn .icon-briefcase {
   background-position: 36px 17px;
 }
 
-.form-horizontal .control-label {
-  width: 140px;
-}
-
-.form-horizontal .controls {
-  margin-left: 145px;
-}
-
 .controls #field-schema-vocabulary,
 .controls #field-codelist {
   width: 100%;
@@ -127,6 +119,18 @@ p.home-footer-text {
   padding-right: 0;
 }
 
+.control-full input[type=radio]{
+  width: auto;
+}
+
+.harvest-types label.radio {
+  margin-bottom: 0;
+}
+
+.harvest-types label.radio input{
+  top: -1px;
+}
+
 .editor-info-block {
   margin-top: -14px;
   margin-bottom: 14px;
@@ -156,4 +160,3 @@ p.home-footer-text {
 .btn-primary {
   background-image: linear-gradient(to bottom,#30778d,#085871);
 }
-

@@ -22,9 +22,9 @@
 
   {{ form.markdown('notes', id='field-notes', label=_('Description'), value=data.notes, error=errors.notes) }}
 
-  <div class="harvest-types control-group">
-    <label class="control-label">Source type</label>
-    <div class="controls">
+  <div class="form-group harvest-types control-group control-full">
+    <label class="control-label col-md-3">Source type</label>
+    <div class="controls col-md-9">
       {% for harvester in h.harvesters_info() %}
         {% set checked = False %}
         {# select first option if nothing in data #}
