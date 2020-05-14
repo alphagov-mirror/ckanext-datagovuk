@@ -160,3 +160,13 @@ p.home-footer-text {
 .btn-primary {
   background-image: linear-gradient(to bottom,#30778d,#085871);
 }
+
+.error .input-group-addon {
+  float: left;
+  display: block;
+  width: auto;
+}
+
+.error-block {
+  margin-top: -2px;
+}
