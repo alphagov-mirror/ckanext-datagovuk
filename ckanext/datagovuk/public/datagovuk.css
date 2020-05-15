@@ -170,3 +170,7 @@ p.home-footer-text {
 .error-block {
   margin-top: -2px;
 }
+
+.u-overflow-hidden {
+  overflow: hidden;
+}
