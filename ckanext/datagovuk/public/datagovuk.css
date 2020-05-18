@@ -149,6 +149,19 @@ p.home-footer-text {
   height: 32px;
 }
 
+.select2-container.form-control {
+  padding: 0;
+  border: 0;
+}
+
+.select2-drop {
+  margin-top: -7px;
+}
+
+.select2-drop.select2-drop-above {
+  margin-top: -3px;
+}
+
 .form-actions {
   padding-top: 14px;
   border-top: 1px solid #707070;
