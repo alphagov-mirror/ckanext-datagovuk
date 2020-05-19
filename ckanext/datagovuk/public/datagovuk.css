@@ -179,6 +179,10 @@ p.home-footer-text {
   background-image: linear-gradient(to bottom,#30778d,#085871);
 }
 
+.js .image-upload .btn-remove-url {
+  margin-right: 15px;
+}
+
 .error .input-group-addon {
   float: left;
   display: block;
@@ -192,3 +196,5 @@ p.home-footer-text {
 .u-overflow-hidden {
   overflow: hidden;
 }
+
+
