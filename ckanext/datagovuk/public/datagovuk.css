@@ -193,6 +193,10 @@ p.home-footer-text {
   margin-top: -2px;
 }
 
+.error .form-control {
+  margin-bottom: -4px;
+}
+
 .u-overflow-hidden {
   overflow: hidden;
 }
