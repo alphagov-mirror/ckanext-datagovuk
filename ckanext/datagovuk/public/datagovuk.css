@@ -106,9 +106,10 @@ p.home-footer-text {
   margin-bottom: 14px;
 }
 
-.control-label.col-md-3 {
+.control-label {
   text-align: right;
   padding-right: 0;
+  padding-top: 4px;
 }
 
 .control-full input[type=radio]{
@@ -157,10 +158,6 @@ p.home-footer-text {
 .form-actions {
   padding-top: 14px;
   border-top: 1px solid #707070;
-}
-
-.control-label.col-md-3 {
-  padding-top: 4px;
 }
 
 .btn-danger {
