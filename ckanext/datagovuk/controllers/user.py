@@ -1,3 +1,4 @@
+import ckan.controllers.user
 from ckan.controllers.user import UserController
 import ckan.lib.base as base
 import ckan.model as model
@@ -17,6 +18,9 @@ NotFound = logic.NotFound
 NotAuthorized = logic.NotAuthorized
 ValidationError = logic.ValidationError
 UsernamePasswordError = logic.UsernamePasswordError
+
+ckan.controllers.user.UserController.original_new = ckan.controllers.user.UserController.new
+ckan.controllers.user.UserController.new = UserController.new
 
 class UserController(UserController):
     def _new_form_to_db_schema(self):
@@ -102,3 +106,7 @@ class UserController(UserController):
                                   unicode(e))
         return render('user/request_reset.html')
 
+    def new(self, data=None, errors=None, error_summary=None):
+        if request.method == 'POST':
+            abort(403, _('Unauthorized to create a user')) 
+        return ckan.controllers.user.UserController.original_new(self, data=data, errors=errors, error_summary=error_summary)
